@@ -1,5 +1,6 @@
 Rotas:</br>
-  users:
+users:</br>
+
     post /users - rota para criar a conta sendo user ou org:
         name: z.string(),
         email: z.string().email(),
@@ -22,6 +23,7 @@ Rotas:</br>
     get /profile - Rota para ver o perfil
 
   pets:
+  
     post /pets - Rota para criar pets, só org pode usa-lá:
         name: z.string(),
         color: z.string().nullable(),
@@ -40,11 +42,11 @@ Rotas:</br>
         longitude: z.number().refine((value) => {
           return Math.abs(value) <= 180
         }),
-    
-  post /pets/adopt - Rota para adotar um pet, só user pode usar, o userId vai pela requisição, só é necessário passar o id do pet:
+      
+    post /pets/adopt - Rota para adotar um pet, só user pode usar, o userId vai pela requisição, só é necessário passar o id do pet:
         id: z.string(),
   
-  post /pets/search - Rota para pesquisar o pet:
+    post /pets/search - Rota para pesquisar o pet:
         city: z.string().optional(),
         currentPetPage: z.coerce.number().min(0),
         latitudeUser: z
