@@ -1,4 +1,4 @@
-Rotas:
+Rotas:</br>
   users:
     post /users - rota para criar a conta sendo user ou org:
         name: z.string(),
